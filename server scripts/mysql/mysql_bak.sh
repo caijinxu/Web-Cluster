@@ -12,5 +12,5 @@ LOG_FILE=${DATA_PATH}/mysqllogs_`date +%F`.log
 DATA_FILE=${DATA_PATH}/mysql_backup_`date +%F`.sql.gz
 MYSQL_PATH=/usr/local/mysql/bin
 MYSQL_CMD="$MYSQL_PATH/mysql -u$MYUSER -p$MYPASS -S $MYSOCK"
-MYSQL_DUMP="$MYSQL_PATH/mysqldump -u$MYUSER -p$MYPASS -S $MYSOCK -A -B --master-data=1 --sigle-transaction -e"
+MYSQL_DUMP="$MYSQL_PATH/mysqldump -u$MYUSER -p$MYPASS -S $MYSOCK -A -B --master-data=1 --single-transaction -e"
 ${MYSQL_DUMP} |gzip>$DATA_FILE; 
